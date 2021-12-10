@@ -1,0 +1,38 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <img [src] = "logo" width="200" style="margin-left: 30px;"/>
+      
+   
+        <div fxLayoutAlign="stretch" fxLayout="column">
+  
+            <mat-form-field  appearance="fill">
+                <mat-icon  matPrefix>mail</mat-icon>
+                <input matInput  value="" placeholder="Enter your Name">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               
+                <mat-icon  matPrefix>lock</mat-icon>
+                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your Password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+          
+            <!-- [disabled]="isLoading" -->
+            <button class="more-button"  mat-raised-button color="primary" (click)="toggleLoading()"  ng-init="toggle = true" ng-click="toggle = !toggle">
+                <img *ngIf= "isLoading" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"  width="20" alt="">  {{toggle ? 'Login' : 'Loging in'}}
+              </button>
+            </div>
+    </mat-card>
+</div>
+
+<!-- <button class="more-button"  mat-raised-button color="primary" (click)="toggleLoading()"  ng-init="toggle = true" ng-click="toggle = !toggle">
+    <img *ngIf= "isLoading" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"  width="20" alt="">  <span>{{toggle ? 'Login' : 'Loging in'}}</span>
+  </button> -->
+
+  <!-- <button mat-raised-button color="primary"  (click)="toggleLoading()">
+    <img *ngIf= "isLoading" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"  width="20" alt="">Login</button>
+   -->
+
+  
