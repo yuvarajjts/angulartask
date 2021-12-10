@@ -21,7 +21,7 @@
             </mat-form-field>
           
             <!-- [disabled]="isLoading" -->
-            <button class="more-button"  mat-raised-button color="primary" (click)="toggleLoading()"  ng-init="toggle = true" ng-click="toggle = !toggle">
+            <button class="more-button"  mat-raised-button color="primary" (click)="toggleLoading()"  ng-init="toggle = true"  ng-click="toggle = !toggle" [disabled]="isLoading">
                 <img *ngIf= "isLoading" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"  width="20" alt="">  {{toggle ? 'Login' : 'Loging in'}}
               </button>
             </div>
